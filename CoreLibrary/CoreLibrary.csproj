@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Remove buildtemp for MessagePackCompiler -->
+  <ItemGroup>
+    <Compile Remove="obj\**" />
+    <Compile Remove="__buildtemp*" />
+    <None Remove="__buildtemp*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\HardenedCore\**" />
+    <EmbeddedResource Remove="Models\HardenedCore\**" />
+    <None Remove="Models\HardenedCore\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MessagePack" Version="1.8.74" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="Pkcs11Interop" Version="5.0.0" />
+    <PackageReference Include="System.Security.Cryptography.Cng" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Generated\" />
+    <Folder Include="Utilities\Extensions\" />
+    <Folder Include="Utilities\Migration\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Pkcs11Interop.X509Store">
+      <HintPath>/home/alex/src/misc/deps/Pkcs11Interop.X509Store/src/Pkcs11Interop.X509Store/bin/Debug/netstandard2.0/Pkcs11Interop.X509Store.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="dotnet &quot;$HOME/src/utils/mpc/mpc.dll&quot; -i &quot;$(ProjectDir)/$(ProjectFileName)&quot; -o &quot;$(ProjectDir)/Generated/MessagePackGenerated.cs&quot; -r &quot;$(ProjectName)GeneratedResolver&quot; -n &quot;$(ProjectName).Generated&quot;" />
+  </Target>
+
+</Project>

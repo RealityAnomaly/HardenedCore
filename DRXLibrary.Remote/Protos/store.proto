@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option csharp_namespace = "DRXLibrary.Remote.Models";
+
+package store;
+
+service Store {
+  rpc Create (CreateRequest) returns (CreateReply);
+  rpc Read (ReadRequest) returns (ReadReply);
+  rpc Update (UpdateRequest) returns (UpdateReply);
+  rpc Delete (DeleteRequest) returns (DeleteReply);
+}
+
+message CreateRequest {
+  string name = 1;
+}
+
+message CreateReply {
+  string id = 1;
+}
+
+message ReadRequest {
+  string id = 1;
+}
+
+message ReadReply {
+  string id = 1;
+  string name = 2;
+  bool encrypted = 3;
+  string key_id = 4;
+  repeated string flag_ids = 5;
+}
+
+message UpdateRequest {
+  string name = 1;
+}
+
+message UpdateReply {}
+
+message DeleteRequest {
+  string id = 1;
+}
+
+message DeleteReply {}

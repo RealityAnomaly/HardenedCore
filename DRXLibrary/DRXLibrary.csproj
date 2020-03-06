@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Remove buildtemp for MessagePackCompiler -->
+  <ItemGroup>
+    <Compile Remove="obj\**" />
+    <Compile Remove="__buildtemp*" />
+    <None Remove="__buildtemp*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Crc32.NET" Version="1.2.0" />
+    <PackageReference Include="MessagePack" Version="1.8.74" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="RtfPipe" Version="1.0.7155.29772" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreLibrary\CoreLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Generated\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BracketPipe">
+      <HintPath>/home/alex/src/misc/deps/BracketPipe/src/BracketPipe/bin/Release/netstandard2.0/BracketPipe.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="dotnet &quot;$HOME/src/utils/mpc/mpc.dll&quot; -i &quot;$(ProjectDir)/$(ProjectFileName)&quot; -o &quot;$(ProjectDir)/Generated/MessagePackGenerated.cs&quot; -r &quot;$(ProjectName)GeneratedResolver&quot; -n &quot;$(ProjectName).Generated&quot;" />
+  </Target>
+
+</Project>
