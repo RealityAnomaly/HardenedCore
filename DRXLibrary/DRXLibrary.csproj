@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="Crc32.NET" Version="1.2.0" />
-    <PackageReference Include="MessagePack" Version="1.8.74" />
+    <PackageReference Include="MessagePack" Version="1.9.11" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
     <PackageReference Include="RtfPipe" Version="1.0.7155.29772" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.1" />
