@@ -1,0 +1,34 @@
+﻿<ContentDialog
+    x:Class="DRXNextGeneration.Views.Dialogs.DocumentPropertiesDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:DRXNextGeneration.Common.Converters"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Title="Document Properties"
+    PrimaryButtonText="Save"
+    CloseButtonText="Cancel"
+    PrimaryButtonClick="DocumentPropertiesDialog_OnPrimaryButtonClick"
+    DefaultButton="Primary">
+    <ContentDialog.Resources>
+        <converters:IntToEnumConverter x:Key="IntToEnumConverter" />
+    </ContentDialog.Resources>
+
+    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <TextBox x:Name="TitleTextBox" Header="Title" Text="{x:Bind Document.Title, Mode=OneTime}" />
+        <CalendarDatePicker x:Name="DatePicker" Header="Date" Date="{x:Bind Document.TimeStamp, Mode=OneTime}" Margin="0,10,0,0" Width="200" />
+        <ComboBox x:Name="SecurityLevelComboBox" Header="Security Level" SelectedIndex="{x:Bind Document.SecurityLevel, Mode=OneTime, Converter={StaticResource IntToEnumConverter}}" Margin="0,10,0,0" Width="200">
+            <x:String>Unclassified (UCF)</x:String>
+            <x:String>Protected (PRO)</x:String>
+            <x:String>Confidential (CNF)</x:String>
+            <x:String>Secret (SCT)</x:String>
+            <x:String>Top Secret (TSCT)</x:String>
+            <x:String>BlackGold (BG)</x:String>
+            <x:String>StormVault (SV)</x:String>
+            <x:String>DIT Vault (DIT)</x:String>
+        </ComboBox>
+        <TextBlock x:Name="ErrorBlock" Visibility="Collapsed" Foreground="Red" Margin="0,10,0,0" />
+    </StackPanel>
+</ContentDialog>

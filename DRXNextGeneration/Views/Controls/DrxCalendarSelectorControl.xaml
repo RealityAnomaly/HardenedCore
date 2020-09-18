@@ -1,0 +1,20 @@
+﻿<UserControl
+    x:Class="DRXNextGeneration.Views.Controls.DrxCalendarSelectorControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DRXNextGeneration.Views.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:DRXNextGeneration.Common.Converters"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <UserControl.Resources>
+        <converters:SecurityLevelToColourConverter x:Name="SecurityLevelToColourConverter" />
+    </UserControl.Resources>
+
+    <CalendarView x:Name="Calendar" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                  CalendarViewDayItemChanging="DrxCalendar_OnCalendarViewDayItemChanging"
+                  SelectedDatesChanged="Calendar_OnSelectedDatesChanged"
+                  SelectionMode="{x:Bind SelectionMode, Mode=OneWay}" />
+</UserControl>

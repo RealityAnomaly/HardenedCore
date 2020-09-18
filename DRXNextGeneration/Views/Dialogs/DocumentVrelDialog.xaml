@@ -1,0 +1,20 @@
+﻿<ContentDialog
+    x:Class="DRXNextGeneration.Views.Dialogs.DocumentVrelDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DRXNextGeneration.Views.Dialogs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Set VREL Score"
+    PrimaryButtonText="Save"
+    CloseButtonText="Cancel"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick">
+
+    <StackPanel Orientation="Vertical">
+        <RatingControl Value="{x:Bind Document.Model.Header.Vrel.Vividity, Mode=OneTime}" Caption="Vividity" x:Name="VividityControl" HorizontalAlignment="Left" />
+        <RatingControl Value="{x:Bind Document.Model.Header.Vrel.Remembrance, Mode=OneTime}" Caption="Remembrance" x:Name="RemembranceControl" HorizontalAlignment="Left" />
+        <RatingControl Value="{x:Bind Document.Model.Header.Vrel.Emotion, Mode=OneTime}" Caption="Emotion" x:Name="EmotionControl" HorizontalAlignment="Left" />
+        <RatingControl Value="{x:Bind Document.Model.Header.Vrel.Length, Mode=OneTime}" Caption="Length" x:Name="LengthControl" HorizontalAlignment="Left" />
+    </StackPanel>
+</ContentDialog>

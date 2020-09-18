@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{4AFDDE54-16E4-4CDF-8216-06DBF4C8DF7E}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DRXNextGeneration</RootNamespace>
+    <AssemblyName>DRXNextGeneration</AssemblyName>
+    <DefaultLanguage>en-GB</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>DRXEditor_StoreKey.pfx</PackageCertificateKeyFile>
+    <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>58E5B83D4C7BF17EC05FCFE481FCDB5B23DA2778</PackageCertificateThumbprint>
+    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
+    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
+    <HockeyAppResourceId>a6128c4b9e614a9bb088ab1c421b0dd3</HockeyAppResourceId>
+    <AppInstallerUri>https://marsden.space/drx</AppInstallerUri>
+    <AppxPackageDir>C:\Users\josephmarsden\Source\Repos\HardenedCore\DRXNextGeneration\AppPackages</AppxPackageDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <!-- Remove buildtemp for MessagePackCompiler -->
+  <ItemGroup>
+    <Compile Remove="obj\**" />
+    <Compile Remove="__buildtemp*" />
+    <None Remove="__buildtemp*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Converters\ColourToBrushConverter.cs" />
+    <Compile Include="Common\Converters\GuiConverterMappings.cs" />
+    <Compile Include="Common\Converters\DateToMonthYearConverter.cs" />
+    <Compile Include="Common\Converters\IntToEnumConverter.cs" />
+    <Compile Include="Common\Converters\NullToBoolConverter.cs" />
+    <Compile Include="Common\Converters\SecurityLevelToBrushConverter.cs" />
+    <Compile Include="Common\Converters\SecurityLevelToNameConverter.cs" />
+    <Compile Include="Common\Converters\SecurityLevelToSecFlagConverter.cs" />
+    <Compile Include="Common\Converters\SecurityLevelToColourConverter.cs" />
+    <Compile Include="Common\DrxCommand.cs" />
+    <Compile Include="Common\DrxNavigationInfo.cs" />
+    <Compile Include="Common\DrxUriParser.cs" />
+    <Compile Include="Common\Extensions\ColourExtensions.cs" />
+    <Compile Include="Common\Extensions\DataPackageExtensions.cs" />
+    <Compile Include="Common\Extensions\SpeechExtensions.cs" />
+    <Compile Include="Common\Extensions\StoreExtensions.cs" />
+    <Compile Include="Common\Groupings\DrxDocumentTimeGrouping.cs" />
+    <Compile Include="Models\LocalBacker.cs" />
+    <Compile Include="ViewModels\DrxAppSettingsViewModel.cs" />
+    <Compile Include="Views\Commands\Document\DeleteDocumentCommand.cs" />
+    <Compile Include="Views\Commands\Document\EditDocumentCommand.cs" />
+    <Compile Include="Views\IViewCommandHandler.cs" />
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DrxDocumentClipboardData.cs" />
+    <Compile Include="Models\LocalDrxSettings.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DrxServiceProvider.cs" />
+    <Compile Include="Services\FlagService.cs" />
+    <Compile Include="Services\StoreService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Utilities\RtfExtensions.cs" />
+    <Compile Include="ViewModels\DrxDocumentViewModel.cs" />
+    <Compile Include="ViewModels\DrxFlagViewModel.cs" />
+    <Compile Include="ViewModels\DrxStoreServiceViewModel.cs" />
+    <Compile Include="ViewModels\DrxStoreViewModel.cs" />
+    <Compile Include="Views\Store\StoreAuditorPage.xaml.cs">
+      <DependentUpon>StoreAuditorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Commands\Editor\UnderlineTextCommand.cs" />
+    <Compile Include="Views\Commands\Editor\ItalicTextCommand.cs" />
+    <Compile Include="Views\Commands\Editor\BoldTextCommand.cs" />
+    <Compile Include="Views\Commands\Editor\RedactTextCommand.cs" />
+    <Compile Include="Views\Commands\StoreService\RestoreStoreCommand.cs" />
+    <Compile Include="Views\Commands\StoreService\AddStoreCommand.cs" />
+    <Compile Include="Views\Commands\Store\BackupStoreCommand.cs" />
+    <Compile Include="Views\Commands\Store\EditStoreCommand.cs" />
+    <Compile Include="Views\Commands\Store\DeleteStoreCommand.cs" />
+    <Compile Include="Views\Controls\CertificateSelectorControl.xaml.cs">
+      <DependentUpon>CertificateSelectorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\DrxCalendarSelectorControl.xaml.cs">
+      <DependentUpon>DrxCalendarSelectorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\FlagSelectorControl.xaml.cs">
+      <DependentUpon>FlagSelectorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\PassportControl.xaml.cs">
+      <DependentUpon>PassportControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\DocumentFlagsDialog.xaml.cs">
+      <DependentUpon>DocumentFlagsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\DocumentPropertiesDialog.xaml.cs">
+      <DependentUpon>DocumentPropertiesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\DrxEditorControl.xaml.cs">
+      <DependentUpon>DrxEditorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\DocumentSelectorFlyout.xaml.cs">
+      <DependentUpon>DocumentSelectorFlyout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\DocumentVrelDialog.xaml.cs">
+      <DependentUpon>DocumentVrelDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\StoreBackupDialog.xaml.cs">
+      <DependentUpon>StoreBackupDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Store\StoreDocumentsPage.xaml.cs">
+      <DependentUpon>StoreDocumentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\StorePropertiesDialog.xaml.cs">
+      <DependentUpon>StorePropertiesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExtendedSplash.xaml.cs">
+      <DependentUpon>ExtendedSplash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Store\StoreFlagEditorPage.xaml.cs">
+      <DependentUpon>StoreFlagEditorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Store\StorePreferencesPage.xaml.cs">
+      <DependentUpon>StorePreferencesPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="DRXEditor_StoreKey.pfx" />
+    <None Include="DRXEditor_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\Protocol.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Assets\DrxEditorCommands.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Store\StoreAuditorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\CertificateSelectorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\DrxCalendarSelectorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\FlagSelectorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\PassportControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\DocumentFlagsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\DocumentPropertiesDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\DrxEditorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\DocumentSelectorFlyout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\DocumentVrelDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\StoreBackupDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Store\StoreDocumentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\StorePropertiesDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExtendedSplash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Store\StoreFlagEditorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Store\StorePreferencesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AppCenter.Analytics">
+      <Version>2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AppCenter.Crashes">
+      <Version>2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AppCenter.Distribute">
+      <Version>2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.8</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp">
+      <Version>5.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI">
+      <Version>5.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Serilog.Extensions.Logging.File">
+      <Version>1.1.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreLibrary\CoreLibrary.csproj">
+      <Project>{c2e27575-f2a8-4b0a-a57a-8d73d87974b0}</Project>
+      <Name>CoreLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DRXLibrary\DRXLibrary.csproj">
+      <Project>{2f4bde04-677b-41c8-b358-562deb1dcf49}</Project>
+      <Name>DRXLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MessagePack, Version=1.8.27.1487, Culture=neutral, PublicKeyToken=b4a0369545f0a1be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\towerfs01.tower.local\Admin\Resources\AdoShared\assemblies\MessagePack.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DRXEditor_StoreKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

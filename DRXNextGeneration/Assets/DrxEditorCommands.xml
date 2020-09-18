@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-gb" Name="DrxEditorCommandSet_en-gb">
+    <AppName>DRX</AppName>
+    <Example>Create a new DRX</Example>
+
+    <Command Name="openDrxDocument">
+      <Example>Open my DRX named Example DRX.</Example>
+      <ListenFor RequireAppName="ExplicitlySpecified">open [the] {builtin:AppName} [document] {name}</ListenFor>
+      <Feedback>Showing the DRX "{name}".</Feedback>
+      <Navigate />
+    </Command>
+
+    <Command Name="newDrxDocument">
+      <Example>Create a new DRX Example DRX.</Example>
+      <ListenFor RequireAppName="ExplicitlySpecified">create [a] [new] {builtin:AppName} [document]</ListenFor>
+      <Feedback>Creating a new DRX.</Feedback>
+      <Navigate />
+    </Command>
+
+    <PhraseList Label="name" />
+  </CommandSet>
+</VoiceCommands>
