@@ -72,5 +72,26 @@ namespace DRXUtility
             File.WriteAllText($"{dir.FullName}/index.md", builder.ToString());
             //ZipFile.CreateFromDirectory(dir.FullName, "export.zip");
         }
+
+        internal static async Task ModelBlobExportAsync(IDrxStore store, string name) {
+            var dir = Directory.CreateDirectory(name);
+
+            var raw = store.GetDocuments();
+            var documents = from entry in raw orderby entry.Header.TimeStamp descending select entry;
+
+            var count = 0;
+            foreach (var document in documents)
+            {
+                if (document.Header.Encrypted || document.Header.SecurityLevel > DrxSecurityLevel.TopSecret) continue;
+
+                await document.LoadBodyAsync();
+                var data = Encoding.UTF8.GetString(document.GetPlainTextBodyAsType(DrxBodyType.Markdown)).Replace(@"\", "\n");
+                data = Regex.Replace(data, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+                File.WriteAllText($"{dir.FullName}/{document.Id}", data);
+                count++;
+            }
+
+            Console.WriteLine($"{count} documents exported to DL blob");
+        }
     }
 }

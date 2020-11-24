@@ -8,10 +8,9 @@
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/DRXUtility/bin/Debug/netcoreapp3.0/DRXUtility.dll",
-            "args": ["-s", "7a89896e-bb61-45a9-9571-03e7dd8bf7b8", "--static-export"],
+            "args": ["-s", "7a89896e-bb61-45a9-9571-03e7dd8bf7b8"],
             "cwd": "${workspaceFolder}/DRXUtility",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "integratedTerminal",

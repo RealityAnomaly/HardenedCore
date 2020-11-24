@@ -12,11 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="BracketPipe" Version="0.7.7232.28997" />
     <PackageReference Include="Crc32.NET" Version="1.2.0" />
-    <PackageReference Include="MessagePack" Version="1.8.74" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
-    <PackageReference Include="RtfPipe" Version="1.0.7155.29772" />
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.1" />
+    <PackageReference Include="MessagePack" Version="2.2.60" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.0" />
+    <PackageReference Include="RtfPipe" Version="2.0.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,14 +28,8 @@
     <Folder Include="Generated\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="BracketPipe">
-      <HintPath>/home/alex/src/misc/deps/BracketPipe/src/BracketPipe/bin/Release/netstandard2.0/BracketPipe.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="dotnet &quot;$HOME/src/utils/mpc/mpc.dll&quot; -i &quot;$(ProjectDir)/$(ProjectFileName)&quot; -o &quot;$(ProjectDir)/Generated/MessagePackGenerated.cs&quot; -r &quot;$(ProjectName)GeneratedResolver&quot; -n &quot;$(ProjectName).Generated&quot;" />
+    <Exec Command="dotnet mpc -i &quot;$(ProjectDir)/$(ProjectFileName)&quot; -o &quot;$(ProjectDir)/Generated/MessagePackGenerated.cs&quot; -r &quot;$(ProjectName)GeneratedResolver&quot; -n &quot;$(ProjectName).Generated&quot;" />
   </Target>
 
 </Project>

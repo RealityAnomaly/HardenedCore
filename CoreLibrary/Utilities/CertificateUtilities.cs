@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using Net.Pkcs11Interop.X509Store;
 using System.Security;
+using Net.Pkcs11Interop.X509Store;
 
 namespace CoreLibrary.Utilities
 {
@@ -71,7 +71,7 @@ namespace CoreLibrary.Utilities
         }
 
         public static Pkcs11X509Certificate GetPkcs11CertificateFromSerial(string serial) {
-            var store = new Pkcs11X509Store("opensc-pkcs11.so", new PinProvider());
+            var store = new Pkcs11X509Store("/nix/store/vyy3qaa99ldb2f2f3kgva7z97c3rjwcw-opensc-0.20.0/lib/opensc-pkcs11.so", new PinProvider());
             foreach (var slot in store.Slots) {
                 // no card is in the reader
                 if (slot.Token == null) continue;

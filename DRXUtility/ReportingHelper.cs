@@ -11,12 +11,14 @@ namespace DRXUtility
     {
         private class DocumentOutputModel {
             public string Title { get; private set; }
+            public bool Encrypted { get; private set; }
             public DrxSecurityLevel SecurityLevel { get; private set; }
             public DateTimeOffset TimeStamp { get; private set; }
 
             public static DocumentOutputModel From(DrxDocument document) {
                 return new DocumentOutputModel() {
                     Title = document.Header.Title,
+                    Encrypted = document.Header.Encrypted,
                     SecurityLevel = document.Header.SecurityLevel,
                     TimeStamp = document.Header.TimeStamp
                 };

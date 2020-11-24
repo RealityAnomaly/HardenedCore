@@ -52,7 +52,7 @@ namespace DRXUtility
 
                 if (o.Id == null && o.Title == null) {
                     if (o.StaticExport != null) {
-                        await ExportHelper.StaticExportAsync(found, o.StaticExport);
+                        await ExportHelper.ModelBlobExportAsync(found, o.StaticExport);
                         return;
                     }
 
